@@ -1,5 +1,9 @@
-package Aufgabe_16;
-
+/**
+ * Eingabeklasse fuer den Nutzer
+ * 
+ * @author (Christian Staudte) 
+ * @version (1)
+ */
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
@@ -8,6 +12,10 @@ public class Eingabe {
 	
 	private Random random = new Random();
 	
+	/**
+    	 * Der Nutzer macht eine Eingabe von Integerwerten
+    	 * @return Eine Integerliste mit allen eingegebenen Werten
+    	 */
 	public int[] numberInput(){
 		System.out.println("Geben sie die Liste an Werten ein, die die Waggons haben sollen");
 		System.out.println("Beispiel: \"10 12 14 44 123\"");
@@ -33,6 +41,10 @@ public class Eingabe {
 		}
 	}
 	
+	/**
+    	 * Es werden zufaellig Waggons gemacht. Die Anzahl bestimmt der Nutzer
+    	 * @return Eine Integerliste mit allen Zufallswerten
+    	 */
 	public int[] numberRandom(){
 		int numbers = 0;
 		System.out.println("Geben Sie die Menge an Waggons an...");
@@ -56,17 +68,25 @@ public class Eingabe {
 		return list;
 	}
 	
+	/**
+    	 * Abfrage ob der Nutzer weiterspielen will
+    	 * @return Wahrheitswert
+    	 */
 	public boolean weiterSpielen(){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Wollen Sie nochmal Spielen?");
 		System.out.println("Wenn ja, machen Sie eine Eingabe. Ansonsten druecken sie nur Enter...");
 		String decide = input.nextLine();
 		if(decide.equals("")){
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 	
+	/**
+    	 * Abfrage ob der Nutzer ein Zufallsspiel starten will
+    	 * @return Wahrheitswert
+    	 */
 	public boolean randomGame(){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Wollen Sie die Liste selbst eingeben?");

@@ -1,5 +1,9 @@
-package Aufgabe_16;
-
+/**
+ * Mainklasse
+ * 
+ * @author (Christian Staudte) 
+ * @version (1)
+ */
 public class Main {
 	public static void main(String[]args){
 		Eingabe e = new Eingabe();
@@ -9,11 +13,8 @@ public class Main {
 		
 		if(!randomGame)numbers = e.numberInput();	
 		else numbers = e.numberRandom();
-		for(int i = 0; i < numbers.length; i++){
-			System.out.println((i+1) + ": " + numbers[i]);
-		}
 		
-		g = new Gleis(numbers, weiterSpielen);
+		g = new Gleis(numbers, randomGame);
 		g.starten();
 	}
 }
