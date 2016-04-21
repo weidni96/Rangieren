@@ -93,9 +93,13 @@ public class Gleis
     }*/
     public void rangiergleis_Abstellgleis(){
         while(! rangiergleis.empty()){
+	if(rangiergleis.peek().getNumber() == waggonOrdnung.get(0)){
+		rangiergleis_Zuggleis();
+	}else{
         abstellgleis.push(rangiergleis.pop());
         System.out.println(Anzahl + "\t" + abstellgleis.peek().getNumber() + "\tRangiergleis\tAbstellgleis");
         this.Anzahl += 1;
+        }
     }
     }
     private void zuruecksetzen(){
@@ -117,4 +121,11 @@ public class Gleis
         Collections.sort(waggonOrdnung);
     }
    }
+   private void rangiergleis_Zuggleis(){
+	ausgabe += "  " + rangiergleis.peek().getNumber();
+        System.out.println(Anzahl + "\t" + rangiergleis.peek().getNumber() + "\tRangiergleis\tZuggleis\t" + ausgabe);
+        zuggleis.add(rangiergleis.pop());
+        waggonOrdnung.remove(0);
+        this.Anzahl += 1;
+}
 }
